@@ -18,10 +18,9 @@ public class TransaccionItemProcessor implements ItemProcessor<Transaccion, Tran
         final String ibantransactor = transaccion.getIBANTransactor().toUpperCase();
         final int cantidad = transaccion.getCantidad();
         final java.time.LocalDateTime fechaTransaccion = transaccion.getFechaTransaccion();
-        final Transaccion transformedComunidad = new
-                Transaccion(id, ibanbeneficiario, ibantransactor, cantidad, fechaTransaccion);
-        log.info("Converting (" + transaccion + ") into (" + transformedComunidad + ")");
+        final Transaccion transformedTransaccion = new Transaccion(id, ibanbeneficiario, ibantransactor, cantidad, fechaTransaccion);
+        log.info("Converting (" + transaccion + ") into (" + transformedTransaccion + ")");
 
-        return transformedComunidad;
+        return transformedTransaccion;
     }
 }

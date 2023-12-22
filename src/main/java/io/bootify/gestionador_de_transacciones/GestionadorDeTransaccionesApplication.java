@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-@EnableBatchProcessing
 public class GestionadorDeTransaccionesApplication {
 
     public static void main(final String[] args) {

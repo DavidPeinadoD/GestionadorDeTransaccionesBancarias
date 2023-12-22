@@ -2,7 +2,7 @@ spring:
   datasource:
     url: ${JDBC_DATABASE_URL:jdbc:postgresql:// gestionadordetransacciones-postgres-1/baseBanco}
     username: ${JDBC_DATABASE_USERNAME:postgres}
-    password: ${JDBC_DATABASE_PASSWORD:<<David2005>>}
+    password: ${JDBC_DATABASE_PASSWORD:<<YOUR_PASSWORD>>}
     dbcp2:
       max-wait-millis: 30000
       validation-query: select 1
