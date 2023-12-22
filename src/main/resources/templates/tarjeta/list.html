@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout}">
+    <head>
+        <title>[[#{tarjeta.list.headline}]]</title>
+    </head>
+    <body>
+        <div layout:fragment="content">
+            <div class="d-flex flex-wrap mb-4">
+                <h1 class="flex-grow-1">[[#{tarjeta.list.headline}]]</h1>
+                <div>
+                    <a th:href="@{/tarjetas/add}" class="btn btn-primary ms-2">[[#{tarjeta.list.createNew}]]</a>
+                </div>
+            </div>
+            <div th:if="${tarjetas.empty}">[[#{tarjeta.list.empty}]]</div>
+            <div th:if="${!tarjetas.empty}" class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col">[[#{tarjeta.iban.label}]]</th>
+                            <th scope="col">[[#{tarjeta.numeroPAN.label}]]</th>
+                            <th scope="col">[[#{tarjeta.ccv.label}]]</th>
+                            <th scope="col">[[#{tarjeta.tarjetaCuenta.label}]]</th>
+                            <th><!-- --></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="tarjeta : ${tarjetas}">
+                            <td>[[${tarjeta.iban}]]</td>
+                            <td>[[${tarjeta.numeroPAN}]]</td>
+                            <td>[[${tarjeta.ccv}]]</td>
+                            <td>[[${tarjeta.tarjetaCuenta}]]</td>
+                            <td>
+                                <div class="float-end text-nowrap">
+                                    <a th:href="@{/tarjetas/edit/{iban}(iban=${tarjeta.iban})}" class="btn btn-sm btn-secondary">[[#{tarjeta.list.edit}]]</a>
+                                    <form th:action="@{/tarjetas/delete/{iban}(iban=${tarjeta.iban})}"
+                                            th:data-confirm-message="#{delete.confirm}" method="post" class="js-submit-confirm d-inline">
+                                        <button type="submit" class="btn btn-sm btn-secondary">[[#{tarjeta.list.delete}]]</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
