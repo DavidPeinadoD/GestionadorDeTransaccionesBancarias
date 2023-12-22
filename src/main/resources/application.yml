@@ -1,7 +1,4 @@
 spring:
-  batch:
-    job:
-      enabled: true
   datasource:
     url: ${JDBC_DATABASE_URL:jdbc:postgresql:// gestionadordetransacciones-postgres-1/baseBanco}
     username: ${JDBC_DATABASE_USERNAME:postgres}

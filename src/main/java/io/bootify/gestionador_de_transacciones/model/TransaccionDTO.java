@@ -29,6 +29,18 @@ public class TransaccionDTO {
     @Size(max = 24)
     private String transaccionCuenta;
 
+    public TransaccionDTO() {
+    }
+
+    public TransaccionDTO(Long id, String iBANBeneficiario, String iBANTransactor, Integer cantidad, LocalDateTime fechaTransaccion, String transaccionCuenta) {
+        this.id = id;
+        this.iBANBeneficiario = iBANBeneficiario;
+        this.iBANTransactor = iBANTransactor;
+        this.cantidad = cantidad;
+        this.fechaTransaccion = fechaTransaccion;
+        this.transaccionCuenta = transaccionCuenta;
+    }
+
     public Long getId() {
         return id;
     }

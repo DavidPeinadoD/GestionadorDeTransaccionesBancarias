@@ -45,6 +45,13 @@ public class Transaccion {
     @JoinColumn(name = "transaccion_cuenta_id")
     private Cuenta transaccionCuenta;
 
+    public Transaccion(long id, String ibanbeneficiario, String ibantransactor, int cantidad, LocalDateTime fechaTransaccion) {
+    }
+
+    public Transaccion() {
+
+    }
+
     public Long getId() {
         return id;
     }
